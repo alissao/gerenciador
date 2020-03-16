@@ -19,6 +19,7 @@
             	<li>Nome Empresa: ${ empresa.nome } 
             	    Data Abertura: <fmt:formatDate value="${ empresa.dataAbertura }" pattern="dd/MM/yyyy"/>
             	</li>
+            	<a href="/gerenciador/editaEmpresa?id=${empresa.id}">editar</a>
             	<a href="/gerenciador/removeEmpresa?id=${empresa.id}">remove</a>
         	</c:forEach>
 		</ul>
