@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.cotefacil.gerenciador.modelos.Banco;
+import br.com.cotefacil.gerenciador.modelos.Empresa;
+
 /**
  * Servlet implementation class ListaEmpresasServlet
  */

@@ -2,40 +2,48 @@ package br.com.cotefacil.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.cotefacil.gerenciador.modelos.Banco;
+import br.com.cotefacil.gerenciador.modelos.Empresa;
 
 /**
- * Servlet implementation class RemoveEmpresaServlet
+ * Servlet implementation class MostraEmpresaServlet
  */
-//@WebServlet("/removeEmpresa")
-public class RemoveEmpresaServlet extends HttpServlet {
+//@WebServlet("/mostraEmpresa")
+public class MostraEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RemoveEmpresaServlet() {
+    public MostraEmpresaServlet() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String paramId = request.getParameter("id");
-		Integer id = Integer.valueOf(paramId.isEmpty() ? "0" : paramId);
 		
-		System.out.println(id);
+		String paramId = request.getParameter("id");
+		Integer id = Integer.valueOf(paramId);
 		
 		Banco banco = new Banco();
-		banco.removeEmpresa(id);
 		
-		response.sendRedirect("listaEmpresas");
+		Empresa empresa = banco.buscaEmpresaPeloId(id);
+		
+		System.out.println(empresa.getNome());
+		
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
+		rd.forward(request, response);
 		
 	}
 

@@ -1,4 +1,4 @@
-package br.com.cotefacil.gerenciador.servlet;
+package br.com.cotefacil.gerenciador.modelos;
 
 import java.util.Date;
 
@@ -27,7 +27,6 @@ public class Empresa {
 	public void setDataAbertura(Date dataAbertura) {
 		this.dataAbertura = dataAbertura;
 	}
-	
 	
 
 }
