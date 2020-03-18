@@ -10,9 +10,46 @@
   	<servlet-class>br.com.cotefacil.gerenciador.servlet.OiMundoServlet</servlet-class>
   </servlet>
   
+  <!-- 
   <servlet-mapping>
   	<servlet-name>QQcoisa</servlet-name>
   	<url-pattern> /ola</url-pattern>
   </servlet-mapping>
+  
+  <filter>
+    <filter-name>MF</filter-name>
+    <filter-class>br.com.cotefacil.gerenciador.servlet.MonitoramentoFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>MF</filter-name>
+    <url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+    <filter-name>AF</filter-name>
+    <filter-class>br.com.cotefacil.gerenciador.servlet.AutorizacaoFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>AF</filter-name>
+    <url-pattern>/entrada</url-pattern>
+  </filter-mapping> 
+
+  <filter>
+  	<filter-name>CF</filter-name>
+  	<filter-class>br.com.cotefacil.gerenciador.acoes.ControladorFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>CF</filter-name>
+  	<url-pattern>/entrada</url-pattern>
+  </filter-mapping>
+   -->
+  
+  <session-config>
+    <!-- 30 min -->
+    <session-timeout>30</session-timeout>
+  </session-config>
   
 </web-app>
